@@ -17,7 +17,6 @@ namespace Learn_Web_Forms.Views {
         company = db.Companies.Find(ID);
       }
 
-      txtName.
       //txtName.Text = company.Name;
     }
 

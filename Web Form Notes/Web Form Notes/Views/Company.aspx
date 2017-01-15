@@ -6,8 +6,8 @@
 
 
 
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    <asp:TextBox ID="txtName" runat="server" OnTextChanged="txtName_TextChanged" Text ="<%# Container. %>"></asp:TextBox>
+    <asp:EntityDataSource ID="EntityDataSource1" runat="server">
+    </asp:EntityDataSource>
 
     
 

@@ -13,5 +13,9 @@ namespace Learn_Web_Forms.Views {
 
     }
 
-  }
+    protected void btnQuotes_OnClick(object sender, EventArgs e) {
+      //Response.Redirect($"/Company?id={}");
+    }
+
+}
 }
