@@ -10,6 +10,13 @@ using System.Web.SessionState;
 namespace Learn_Web_Forms {
   public class Global : HttpApplication {
     void Application_Start(object sender, EventArgs e) {
+
+      RouteTable.Routes.MapPageRoute("", "About", "~/Views/About.aspx");
+      RouteTable.Routes.MapPageRoute("", "Companies", "~/Views/Companies.aspx");
+      RouteTable.Routes.MapPageRoute("", "Company", "~/Views/Company.aspx");
+      RouteTable.Routes.MapPageRoute("", "Contacts", "~/Views/Contacts.aspx");
+      RouteTable.Routes.MapPageRoute("", "Notes", "~/Views/Notes.aspx");
+
       // Code that runs on application startup
       RouteConfig.RegisterRoutes(RouteTable.Routes);
       BundleConfig.RegisterBundles(BundleTable.Bundles);

@@ -40,6 +40,16 @@ namespace Learn_Web_Forms.Database {
           .Property(e => e.Phone)
           .IsUnicode(false);
 
+      modelBuilder.Entity<Company>()
+          .HasMany(e => e.Contacts)
+          .WithRequired(e => e.Company)
+          .WillCascadeOnDelete(false);
+
+      modelBuilder.Entity<Company>()
+          .HasMany(e => e.Quotes)
+          .WithRequired(e => e.Company)
+          .WillCascadeOnDelete(false);
+
       modelBuilder.Entity<Contact>()
           .Property(e => e.Name)
           .IsUnicode(false);
@@ -60,6 +70,11 @@ namespace Learn_Web_Forms.Database {
           .Property(e => e.Details)
           .IsUnicode(false);
 
+      modelBuilder.Entity<Contact>()
+          .HasMany(e => e.Notes)
+          .WithRequired(e => e.Contact)
+          .WillCascadeOnDelete(false);
+
       modelBuilder.Entity<Note>()
           .Property(e => e.Title)
           .IsUnicode(false);
@@ -71,6 +86,11 @@ namespace Learn_Web_Forms.Database {
       modelBuilder.Entity<Quote>()
           .Property(e => e.Name)
           .IsUnicode(false);
+
+      modelBuilder.Entity<Quote>()
+          .HasMany(e => e.QuoteLines)
+          .WithRequired(e => e.Quote)
+          .WillCascadeOnDelete(false);
 
       modelBuilder.Entity<QuoteLine>()
           .Property(e => e.DESC)

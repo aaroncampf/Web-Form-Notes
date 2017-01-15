@@ -7,15 +7,24 @@ namespace Learn_Web_Forms.Database {
 
   [Table("Quote")]
   public partial class Quote {
-    [Key]
-    [Column(Order = 0)]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Quote() {
+      QuoteLines = new HashSet<QuoteLine>();
+    }
+
     public int ID { get; set; }
 
-    [Key]
-    [Column(Order = 1, TypeName = "date")]
+    [Column(TypeName = "date")]
     public DateTime Date { get; set; }
 
     [StringLength(50)]
     public string Name { get; set; }
+
+    public int CompanyID { get; set; }
+
+    public virtual Company Company { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<QuoteLine> QuoteLines { get; set; }
   }
 }
