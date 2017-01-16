@@ -7,7 +7,7 @@
     if (int.TryParse(Request.QueryString["id"], out ID)) {
         db.Companies.Find(ID);
     }
-%>
+    %>
     <%-- <%= get.SomeString() %>--%>
     <table>
         <tr>

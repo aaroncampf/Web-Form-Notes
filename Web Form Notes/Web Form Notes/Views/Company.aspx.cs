@@ -7,30 +7,59 @@ using System.Web.UI.WebControls;
 
 namespace Learn_Web_Forms.Views {
   public partial class Company : System.Web.UI.Page {
-    Database.Database db = new Database.Database();
-    Database.Company company = null; //TODO Add Error handling for when no company is found
-
+    public Database.Database db = new Database.Database();
+    public Database.Company company = null; //TODO Add Error handling for when no company is found
 
     protected void Page_Load(object sender, EventArgs e) {
       int ID;
       if (int.TryParse(Request.QueryString["id"], out ID)) {
         company = db.Companies.Find(ID);
       }
+      else {
+        company = db.Companies.Find(1);
+      }
+
+      txtName.Text = txtName.Text == "" ? company.Name : txtName.Text;
+      txtCity.Text = txtCity.Text == "" ? company.City : txtCity.Text;
+      txtState.Text = txtState.Text == "" ? company.State : txtState.Text;
+      txtZip.Text = txtZip.Text == "" ? company.Zip : txtZip.Text;
+      txtPhone.Text = txtPhone.Text == "" ? company.Phone : txtPhone.Text;
+
+
+      //DetailsView1.DataSource = new[] { company };
+      //DetailsView1.DataBind();
 
       //txtName.Text = company.Name;
     }
 
-
-    protected override void OnInitComplete(EventArgs e) {
-      base.OnInitComplete(e);
-
-      txtName.Text = company.Name;
-    }
-
-
-
     protected void txtName_TextChanged(object sender, EventArgs e) {
       company.Name = txtName.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtAddress_TextChanged(object sender, EventArgs e) {
+      company.Address = txtAddress.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtCity_TextChanged(object sender, EventArgs e) {
+      company.City = txtCity.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtState_TextChanged(object sender, EventArgs e) {
+      company.State = txtState.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtZip_TextChanged(object sender, EventArgs e) {
+      company.Zip = txtZip.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtPhone_TextChanged(object sender, EventArgs e) {
+      company.Phone = txtPhone.Text;
+      db.SaveChanges();
     }
   }
 }

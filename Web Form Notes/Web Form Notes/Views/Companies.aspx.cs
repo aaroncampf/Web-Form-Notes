@@ -10,12 +10,11 @@ namespace Learn_Web_Forms.Views {
     private Database.Database db = new Database.Database();
 
     protected void Page_Load(object sender, EventArgs e) {
-
     }
 
     protected void btnQuotes_OnClick(object sender, EventArgs e) {
       //Response.Redirect($"/Company?id={}");
     }
 
-}
+  }
 }
