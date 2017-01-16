@@ -12,9 +12,9 @@ namespace Learn_Web_Forms {
     void Application_Start(object sender, EventArgs e) {
 
       RouteTable.Routes.MapPageRoute("", "About", "~/Views/About.aspx");
-      RouteTable.Routes.MapPageRoute("", "Contact", "~/Views/Contact.aspx");
+      RouteTable.Routes.MapPageRoute("", "Contact/{id}", "~/Views/Contact.aspx");
       RouteTable.Routes.MapPageRoute("", "Companies", "~/Views/Companies.aspx");
-      RouteTable.Routes.MapPageRoute("", "Company", "~/Views/Company.aspx");
+      RouteTable.Routes.MapPageRoute("", "Company/{id}", "~/Views/Company.aspx");
       RouteTable.Routes.MapPageRoute("", "Contacts", "~/Views/Contacts.aspx");
       RouteTable.Routes.MapPageRoute("", "Notes", "~/Views/Notes.aspx");
 

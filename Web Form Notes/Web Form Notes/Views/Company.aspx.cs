@@ -12,19 +12,14 @@ namespace Learn_Web_Forms.Views {
 
     protected void Page_Load(object sender, EventArgs e) {
       int ID;
-      if (int.TryParse(Request.QueryString["id"], out ID)) {
-        company = db.Companies.Find(ID);
-      }
-      else {
-        company = db.Companies.Find(1);
-      }
+      company = db.Companies.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
 
       txtName.Text = txtName.Text == "" ? company.Name : txtName.Text;
+      txtAddress.Text = txtAddress.Text == "" ? company.Address : txtAddress.Text;
       txtCity.Text = txtCity.Text == "" ? company.City : txtCity.Text;
       txtState.Text = txtState.Text == "" ? company.State : txtState.Text;
       txtZip.Text = txtZip.Text == "" ? company.Zip : txtZip.Text;
       txtPhone.Text = txtPhone.Text == "" ? company.Phone : txtPhone.Text;
-
 
       //DetailsView1.DataSource = new[] { company };
       //DetailsView1.DataBind();

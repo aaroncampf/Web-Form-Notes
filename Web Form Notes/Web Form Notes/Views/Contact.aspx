@@ -3,7 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<ol class="breadcrumb">
 		<li><a href="/">Home</a></li>
-		<li><a href="/Companies?id=<%: contact.Company.ID %>">Companies</a></li>
+		<li><a href="/Companies">Companies</a></li>
+        <li><a href="/Company?id=<%: contact.Company.ID %>"><%: contact.Company.Name %></a></li>
 		<li class="active"><%: contact.Name %></li>
 	</ol>
 
@@ -14,27 +15,23 @@
 	<div class="container" style="width: 200px; float: left;">
 		<div class="form-group">
 			<label for="txtName">Name</label>
-			<asp:TextBox runat="server" ID="txtName" class="form-control" OnTextChanged="txtName_TextChanged" AutoPostBack="True"></asp:TextBox>
+			<asp:TextBox runat="server" ID="txtName" class="form-control" AutoPostBack="True" OnTextChanged="txtName_TextChanged"></asp:TextBox>
 		</div>
 		<div class="form-group">
-			<label for="txtAddress">Address</label>
-			<asp:TextBox runat="server" ID="txtAddress" class="form-control" AutoPostBack="True" OnTextChanged="txtAddress_TextChanged"></asp:TextBox>
-		</div>
-		<div class="form-group">
-			<label for="txtCity">City</label>
-			<asp:TextBox runat="server" ID="txtCity" class="form-control" AutoPostBack="True" OnTextChanged="txtCity_TextChanged"></asp:TextBox>
-		</div>
-		<div class="form-group">
-			<label for="txtState">State</label>
-			<asp:TextBox runat="server" ID="txtState" class="form-control" AutoPostBack="True" OnTextChanged="txtState_TextChanged"></asp:TextBox>
-		</div>
-		<div class="form-group">
-			<label for="txtZip">Zip</label>
-			<asp:TextBox runat="server" ID="txtZip" class="form-control" AutoPostBack="True" OnTextChanged="txtZip_TextChanged"></asp:TextBox>
+			<label for="txtPosition">Position</label>
+			<asp:TextBox runat="server" ID="txtPosition" class="form-control" AutoPostBack="True" OnTextChanged="txtPosition_TextChanged"></asp:TextBox>
 		</div>
 		<div class="form-group">
 			<label for="txtPhone">Phone</label>
 			<asp:TextBox runat="server" ID="txtPhone" class="form-control" AutoPostBack="True" OnTextChanged="txtPhone_TextChanged"></asp:TextBox>
+		</div>
+		<div class="form-group">
+			<label for="txtEmail">Email</label>
+			<asp:TextBox runat="server" ID="txtEmail" class="form-control" AutoPostBack="True" OnTextChanged="txtEmail_TextChanged"></asp:TextBox>
+		</div>
+		<div class="form-group">
+			<label for="txtDetails">Details</label>
+			<asp:TextBox runat="server" ID="txtDetails" class="form-control" AutoPostBack="True" OnTextChanged="txtDetails_TextChanged"></asp:TextBox>
 		</div>
 	</div>
 

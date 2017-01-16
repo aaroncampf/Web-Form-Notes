@@ -12,12 +12,38 @@ namespace Learn_Web_Forms {
 
     protected void Page_Load(object sender, EventArgs e) {
       int ID;
-      if (int.TryParse(Request.QueryString["id"], out ID)) {
-        contact = db.Contacts.Find(ID);
-      }
-      else {
-        contact = db.Contacts.Find(1);
-      }
+      contact = db.Contacts.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
+
+      txtName.Text = txtName.Text == "" ? contact.Name : txtName.Text;
+      txtPosition.Text = txtPosition.Text == "" ? contact.Position : txtPosition.Text;
+      txtPhone.Text = txtPhone.Text == "" ? contact.Phone : txtPhone.Text;
+      txtEmail.Text = txtEmail.Text == "" ? contact.Email : txtEmail.Text;
+      txtDetails.Text = txtDetails.Text == "" ? contact.Details : txtDetails.Text;
+    }
+
+    protected void txtName_TextChanged(object sender, EventArgs e) {
+      contact.Name = txtName.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtPosition_TextChanged(object sender, EventArgs e) {
+      contact.Position = txtPosition.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtPhone_TextChanged(object sender, EventArgs e) {
+      contact.Phone = txtPhone.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtEmail_TextChanged(object sender, EventArgs e) {
+      contact.Email = txtEmail.Text;
+      db.SaveChanges();
+    }
+
+    protected void txtDetails_TextChanged(object sender, EventArgs e) {
+      contact.Details = txtDetails.Text;
+      db.SaveChanges();
     }
   }
 }
