@@ -20,9 +20,9 @@
 			<asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
 			<asp:BoundField DataField="Zip" HeaderText="Zip" SortExpression="Zip" />
 			<asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
-			<asp:hyperlinkfield Text="Details" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Company?id={0}" />
-			<asp:hyperlinkfield Text="Contacts" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Contacts?id={0}" />
-			<asp:hyperlinkfield Text="Quotes" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Quotes?id={0}" />
+			<asp:hyperlinkfield Text="Details" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Company/{0}" />
+			<asp:hyperlinkfield Text="Contacts" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Contacts/{0}" />
+			<asp:hyperlinkfield Text="Quotes" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Quotes/{0}" />
 		</Columns>
 	</asp:GridView>
 </asp:Content>

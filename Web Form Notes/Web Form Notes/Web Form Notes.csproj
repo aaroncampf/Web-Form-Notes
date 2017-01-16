@@ -169,7 +169,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Contacts.aspx" />
-    <Content Include="Views\Notes.aspx" />
+    <Content Include="Views\Note.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Code\SeedData.cs" />
     <Compile Include="Database\Company.cs" />
     <Compile Include="Database\Contact.cs" />
     <Compile Include="Database\Database.cs" />
@@ -261,12 +262,12 @@
     <Compile Include="Views\Contacts.aspx.designer.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Notes.aspx.cs">
-      <DependentUpon>Notes.aspx</DependentUpon>
+    <Compile Include="Views\Note.aspx.cs">
+      <DependentUpon>Note.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Notes.aspx.designer.cs">
-      <DependentUpon>Notes.aspx</DependentUpon>
+    <Compile Include="Views\Note.aspx.designer.cs">
+      <DependentUpon>Note.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

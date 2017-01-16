@@ -55,7 +55,7 @@
 			<td><%: Contact.Phone %></td>
 			<td><%: Contact.Email %></td>
 			<td><%: Contact.Details %></td>
-			<td><a href="/Contact?id=<%: Contact.ID %>">Edit</a></td>
+			<td><a href="/Contact/<%: Contact.ID %>">Edit</a></td>
 			<% } %>
 		</tr>
 	</table>
