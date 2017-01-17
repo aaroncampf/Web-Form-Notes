@@ -6,8 +6,6 @@
         <li><a href="/Companies">Companies</a></li>
         <li><a href="/Company/<%: note.Contact.Company.ID %>"><%:note.Contact.Company.Name %></a></li>
         <li><a href="/Contact/<%: note.Contact.ID %>"><%:note.Contact.Name %></a></li>
-        <li><a href="/Companies">Companies</a></li>
-
         <li class="active"><%: note.Title %></li>
     </ol>
 
