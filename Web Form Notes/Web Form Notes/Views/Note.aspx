@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Note.aspx.cs" Inherits="Learn_Web_Forms.Views.WebForm1" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li><a href="/Companies">Companies</a></li>
@@ -26,5 +27,12 @@
             <label for="txtText">Text</label>
             <asp:TextBox runat="server" ID="txtText" class="form-control" AutoPostBack="True" OnTextChanged="txtText_TextChanged"></asp:TextBox>
         </div>
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClientClick="PageMethods.btnDelete_Click(); return false;" OnClick="btnDelete_Click" />
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="Button1" runat="server" Text="Your Text" OnClick="btnDelete_Click" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
+
 </asp:Content>

@@ -11,7 +11,7 @@
 	</div>
 	<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Learn_Web_Forms.Database.Company" DeleteMethod="DeleteCompany" InsertMethod="AddCompany" SelectMethod="GetAllCompanies" TypeName="Learn_Web_Forms.Database.Company" UpdateMethod="UpdateCompany"></asp:ObjectDataSource>
 
-	<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+	<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table">
 		<Columns>
 			<asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
 			<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />

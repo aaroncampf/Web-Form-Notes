@@ -12,7 +12,8 @@ namespace Learn_Web_Forms {
 
     protected void Page_Load(object sender, EventArgs e) {
       int ID;
-      contact = db.Contacts.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
+      //contact = db.Contacts.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
+      contact = int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? db.Contacts.Find(ID) : db.Contacts.First();
 
       txtName.Text = txtName.Text == "" ? contact.Name : txtName.Text;
       txtPosition.Text = txtPosition.Text == "" ? contact.Position : txtPosition.Text;

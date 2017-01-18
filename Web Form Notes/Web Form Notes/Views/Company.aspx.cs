@@ -12,7 +12,9 @@ namespace Learn_Web_Forms.Views {
 
     protected void Page_Load(object sender, EventArgs e) {
       int ID;
-      company = db.Companies.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
+      //company = db.Companies.Find(int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? ID : 1);
+      company = int.TryParse(RouteData.Values["id"]?.ToString(), out ID) ? db.Companies.Find(ID) : db.Companies.First();
+
 
       txtName.Text = txtName.Text == "" ? company.Name : txtName.Text;
       txtAddress.Text = txtAddress.Text == "" ? company.Address : txtAddress.Text;
