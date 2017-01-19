@@ -25,4 +25,6 @@
 			<asp:hyperlinkfield Text="Quotes" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/Quotes/{0}" />
 		</Columns>
 	</asp:GridView>
+
+    <asp:Button runat="server" ID="btnAdd" Text="Add Company" OnClick="btnAdd_Click" />
 </asp:Content>

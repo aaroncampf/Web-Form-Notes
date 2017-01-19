@@ -16,5 +16,11 @@ namespace Learn_Web_Forms.Views {
       //Response.Redirect($"/Company?id={}");
     }
 
+    protected void btnAdd_Click(object sender, EventArgs e) {
+      var Company = new Database.Company();
+      db.Companies.Add(Company);
+      db.SaveChanges();
+      Response.Redirect($"/Company/{Company.ID}", false);
+    }
   }
 }

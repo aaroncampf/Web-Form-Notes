@@ -58,5 +58,19 @@ namespace Learn_Web_Forms.Views {
       company.Phone = txtPhone.Text;
       db.SaveChanges();
     }
+
+    protected void btnAddContact_Click(object sender, EventArgs e) {
+      var Contact = new Database.Contact() { Company = company };
+      db.Contacts.Add(Contact);
+      db.SaveChanges();
+      Response.Redirect($"/Contact/{Contact.ID}", false);
+    }
+
+    protected void btnAddQuote_Click(object sender, EventArgs e) {
+      var Quote = new Database.Contact() { Company = company };
+      db.Contacts.Add(Quote);
+      db.SaveChanges();
+      Response.Redirect($"/Quote/{Quote.ID}", false);
+    }
   }
 }

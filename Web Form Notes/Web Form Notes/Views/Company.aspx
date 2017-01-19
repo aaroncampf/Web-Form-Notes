@@ -59,5 +59,22 @@
 			<% } %>
 		</tr>
 	</table>
+    <asp:Button runat="server" ID="btnAddContact" Text="Add Contact" OnClick="btnAddContact_Click" />
 
+    	<table class="table">
+		<caption>Quotes</caption>
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th></th>
+		</tr>
+		<tr>
+			<% foreach (var Quote in company.Quotes) { %>
+			<td><%: Quote.Name %></td>
+			<td><%: Quote.Date %></td>
+			<td><a href="/Quote/<%: Quote.ID %>">Edit</a></td>
+			<% } %>
+		</tr>
+	</table>
+    <asp:Button runat="server" ID="btnAddQuote" Text="Add Contact" OnClick="btnAddQuote_Click" />
 </asp:Content>
