@@ -170,6 +170,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Contacts.aspx" />
     <Content Include="Views\Note.aspx" />
+    <Content Include="Views\Quote.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -268,6 +269,13 @@
     </Compile>
     <Compile Include="Views\Note.aspx.designer.cs">
       <DependentUpon>Note.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Quote.aspx.cs">
+      <DependentUpon>Quote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Quote.aspx.designer.cs">
+      <DependentUpon>Quote.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

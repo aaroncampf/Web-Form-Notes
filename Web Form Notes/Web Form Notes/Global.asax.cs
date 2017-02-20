@@ -17,6 +17,7 @@ namespace Learn_Web_Forms {
       RouteTable.Routes.MapPageRoute("", "Company/{id}", "~/Views/Company.aspx");
       RouteTable.Routes.MapPageRoute("", "Contacts", "~/Views/Contacts.aspx");
       RouteTable.Routes.MapPageRoute("", "Note/{id}", "~/Views/Note.aspx");
+      RouteTable.Routes.MapPageRoute("", "Quote/{id}", "~/Views/Quote.aspx");
 
       // Code that runs on application startup
       RouteConfig.RegisterRoutes(RouteTable.Routes);

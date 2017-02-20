@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Quote.aspx.cs" Inherits="Learn_Web_Forms.Views.Quote" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Quote.aspx.cs" Inherits="Learn_Web_Forms.Views.Quote" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/Companies">Companies</a></li>
+        <li><a href="/Company/<%: note.Contact.Company.ID %>"><%:note.Contact.Company.Name %></a></li>
+        <li class="active"><%: note.Title %></li>
+    </ol>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+</asp:Content>

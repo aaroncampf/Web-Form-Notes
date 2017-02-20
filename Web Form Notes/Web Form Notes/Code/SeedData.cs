@@ -20,6 +20,14 @@ namespace Learn_Web_Forms.Code {
       });
       db.SaveChanges();
 
+      db.Quotes.AddRange(new[] {
+        new Database.Company() { Name = "AJP Northwest", Address ="14567 Street", City="Satan City", State="OR", Zip ="666", Phone = "(666) 666-6666" },
+        new Database.Company() { Name = "ANS Sales and Marketing", Address ="4566 Waring States", City="Ming City", State="OR", Zip ="5566474", Phone = "(999) 999-9999" }
+      });
+      db.SaveChanges();
+
+
+
       db.Contacts.AddRange(new[] {
         new Database.Contact() { Name = "Steven", Email = "Steven@gmail.com", Phone = "(667) 678-9876", Position ="Head of Sales", Details="Like a magic", Company = db.Companies.First() },
         new Database.Contact() { Name = "Bob", Email = "Bob@gmail.com", Phone = "(667) 678-9876", Position ="Head of Sales", Details="Like a magic", Company = db.Companies.OrderBy(x => x.ID).Skip(1).First() }
